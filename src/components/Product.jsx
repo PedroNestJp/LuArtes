@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { collection, addDoc, onSnapshot, deleteDoc } from "firebase/firestore";
-import { db } from "../App";
+import { db } from "../config/firebase";
 import Cart from "./Cart";
 
 function Products() {

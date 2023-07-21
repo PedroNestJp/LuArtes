@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import PasswordReset from "./pages/ForgotPassword";
 import Confirmation from "./pages/Confirmation";
 import { auth } from "./config/firebase";
+import AuthProvider from "./pages/contexts/AuthProvider";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -54,6 +55,7 @@ function App() {
   return (
     <Router>
       <div>
+        <AuthProvider>
         <Header currentUser={currentUser} cartItems={cartItems} />
         <Routes>
           <Route exact path="/" element={<Home />}>
@@ -76,6 +78,7 @@ function App() {
           <Route exact path="/confirmation" element={ <Confirmation />}>
           </Route>
         </Routes>
+        </AuthProvider>
       </div>
     </Router>
   );

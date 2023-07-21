@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth } from "../config/firebase";
 
 function PrivateRoute({ component: Component, ...rest }) {
   const user = auth.currentUser;

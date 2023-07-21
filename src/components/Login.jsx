@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      history("/");
+      history.push("/");
     } catch (error) {
       setError(error.message);
     }
